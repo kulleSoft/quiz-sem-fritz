@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				quiz: {
+					navy: 'hsl(var(--quiz-navy))',
+					orange: 'hsl(var(--quiz-orange))',
+					yellow: 'hsl(var(--quiz-yellow))',
+					blue: 'hsl(var(--quiz-blue))',
+					card: 'hsl(var(--quiz-card))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
