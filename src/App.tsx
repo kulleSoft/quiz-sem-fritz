@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Categories from "./pages/Categories";
 import DailyChallenge from "./pages/DailyChallenge";
 import Quiz from "./pages/Quiz";
+import TermsOfUse from "./pages/TermsOfUse";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/categories" element={<Categories />} />
           <Route path="/daily-challenge" element={<DailyChallenge />} />
           <Route path="/quiz/:category" element={<Quiz />} />
+          <Route path="/terms" element={<TermsOfUse />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

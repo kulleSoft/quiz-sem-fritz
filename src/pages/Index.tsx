@@ -49,6 +49,15 @@ const Index = () => {
             Desafio Diário
           </QuizButton>
         </div>
+        
+        <div className="text-center mt-8">
+          <button
+            onClick={() => navigate("/terms")}
+            className="text-sm text-white/70 hover:text-white transition-colors underline"
+          >
+            Termos de uso e privacidade
+          </button>
+        </div>
       </div>
     </div>
   );
