@@ -1,9 +1,24 @@
 import { QuizIcon } from "@/components/QuizIcon";
 import { QuizButton } from "@/components/ui/quiz-button";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const Index = () => {
   const navigate = useNavigate();
+  const [showTermsDialog, setShowTermsDialog] = useState(false);
+
+  useEffect(() => {
+    const hasSeenTerms = localStorage.getItem('quiz-terms-accepted');
+    if (!hasSeenTerms) {
+      setShowTermsDialog(true);
+    }
+  }, []);
+
+  const handleAcceptTerms = () => {
+    localStorage.setItem('quiz-terms-accepted', 'true');
+    setShowTermsDialog(false);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
@@ -59,6 +74,52 @@ const Index = () => {
           </button>
         </div>
       </div>
+
+      <Dialog open={showTermsDialog} onOpenChange={() => {}}>
+        <DialogContent className="max-w-md bg-quiz-navy border-quiz-orange/30 text-white max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-quiz-orange text-xl text-center">
+              Termos de Uso e Privacidade
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="space-y-4 text-sm">
+            <div>
+              <h3 className="font-semibold text-quiz-orange mb-2">Termos de Uso</h3>
+              <p className="text-white/90 text-xs leading-relaxed">
+                Ao usar este quiz, você concorda que o app é para entretenimento e educação. 
+                É proibido uso comercial sem autorização e cópia do conteúdo.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold text-quiz-orange mb-2">Privacidade</h3>
+              <p className="text-white/90 text-xs leading-relaxed">
+                Coletamos apenas dados necessários (pontuações, progresso). 
+                Não compartilhamos informações pessoais. Dados ficam no seu dispositivo.
+              </p>
+            </div>
+            
+            <div className="flex flex-col gap-2 pt-4">
+              <QuizButton
+                variant="primary"
+                size="lg"
+                onClick={handleAcceptTerms}
+                className="w-full"
+              >
+                Aceito os Termos
+              </QuizButton>
+              
+              <button
+                onClick={() => navigate("/terms")}
+                className="text-xs text-quiz-orange hover:text-quiz-orange-light transition-colors underline"
+              >
+                Ler termos completos
+              </button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
