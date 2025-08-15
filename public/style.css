@@ -393,6 +393,141 @@ body {
     gap: 12px;
 }
 
+/* Categorias */
+.categories-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 20px 0;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    border-color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.category-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #f97316;
+}
+
+.category-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+/* Desafio Diário */
+.daily-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.daily-info {
+    margin-bottom: 30px;
+}
+
+.daily-date {
+    color: #f97316;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.daily-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.daily-info p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.daily-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.info-card h4 {
+    color: #f97316;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.reward-desc {
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.progress-mini {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.progress-mini-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f97316, #ea580c);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.daily-actions {
+    margin-top: 20px;
+}
+
 /* Responsivo */
 @media (max-width: 480px) {
     .container {
@@ -415,5 +550,23 @@ body {
     .quiz-btn {
         padding: 14px 24px;
         font-size: 16px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .daily-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .category-card {
+        padding: 20px;
+    }
+    
+    .category-icon {
+        font-size: 2.5rem;
     }
 }

@@ -101,6 +101,8 @@ function hideAllScreens() {
     document.querySelector('.container').style.display = 'none';
     document.getElementById('quizScreen').classList.add('hidden');
     document.getElementById('resultScreen').classList.add('hidden');
+    document.getElementById('categoriesScreen').classList.add('hidden');
+    document.getElementById('dailyChallengeScreen').classList.add('hidden');
 }
 
 // Iniciar quiz
@@ -237,11 +239,27 @@ function updateProgress() {
     document.getElementById('progressFill').style.width = progress + '%';
 }
 
-// Funções para outras seções (placeholder)
+// Mostrar tela de categorias
 function showCategories() {
-    alert('Categorias em desenvolvimento!\nPor enquanto, você pode jogar o quiz geral.');
+    hideAllScreens();
+    document.getElementById('categoriesScreen').classList.remove('hidden');
 }
 
+// Mostrar tela de desafio diário
 function showDailyChallenge() {
-    alert('Desafio diário em desenvolvimento!\nPor enquanto, você pode jogar o quiz geral.');
+    hideAllScreens();
+    document.getElementById('dailyChallengeScreen').classList.remove('hidden');
+    updateDailyDate();
+}
+
+// Atualizar data do desafio diário
+function updateDailyDate() {
+    const today = new Date();
+    const options = { 
+        day: 'numeric', 
+        month: 'long', 
+        year: 'numeric' 
+    };
+    const dateStr = today.toLocaleDateString('pt-BR', options);
+    document.getElementById('dailyDate').textContent = dateStr;
 }

@@ -107,6 +107,95 @@
         </div>
     </div>
 
+    <!-- Tela de Categorias -->
+    <div id="categoriesScreen" class="screen hidden">
+        <div class="quiz-header">
+            <button class="back-btn" onclick="goHome()">← Voltar</button>
+            <h2>Categorias</h2>
+        </div>
+        
+        <div class="categories-container">
+            <div class="categories-grid">
+                <div class="category-card" onclick="startQuiz('geografia')">
+                    <div class="category-icon">🌍</div>
+                    <h3>Geografia</h3>
+                    <p>Explore o mundo</p>
+                </div>
+                
+                <div class="category-card" onclick="startQuiz('historia')">
+                    <div class="category-icon">🏛️</div>
+                    <h3>História</h3>
+                    <p>Viaje no tempo</p>
+                </div>
+                
+                <div class="category-card" onclick="startQuiz('ciencias')">
+                    <div class="category-icon">🔬</div>
+                    <h3>Ciências</h3>
+                    <p>Descubra a natureza</p>
+                </div>
+                
+                <div class="category-card" onclick="startQuiz('esportes')">
+                    <div class="category-icon">⚽</div>
+                    <h3>Esportes</h3>
+                    <p>Teste seus conhecimentos</p>
+                </div>
+                
+                <div class="category-card" onclick="startQuiz('entretenimento')">
+                    <div class="category-icon">🎬</div>
+                    <h3>Entretenimento</h3>
+                    <p>Cinema, música e mais</p>
+                </div>
+                
+                <div class="category-card" onclick="startQuiz('general')">
+                    <div class="category-icon">🧠</div>
+                    <h3>Conhecimentos Gerais</h3>
+                    <p>Um pouco de tudo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Desafio Diário -->
+    <div id="dailyChallengeScreen" class="screen hidden">
+        <div class="quiz-header">
+            <button class="back-btn" onclick="goHome()">← Voltar</button>
+            <h2>Desafio Diário</h2>
+        </div>
+        
+        <div class="daily-container">
+            <div class="daily-info">
+                <div class="daily-date" id="dailyDate">15 de Agosto, 2025</div>
+                <h3>Desafio de Hoje</h3>
+                <p>Complete o quiz diário e ganhe pontos extras!</p>
+            </div>
+            
+            <div class="daily-cards">
+                <div class="info-card">
+                    <div class="card-icon">🎯</div>
+                    <h4>Meta Diária</h4>
+                    <p>5 perguntas corretas</p>
+                    <div class="progress-mini">
+                        <div class="progress-mini-fill" style="width: 40%"></div>
+                    </div>
+                    <span class="progress-text">2/5 completas</span>
+                </div>
+                
+                <div class="info-card">
+                    <div class="card-icon">🏆</div>
+                    <h4>Recompensa</h4>
+                    <p>+50 pontos bônus</p>
+                    <p class="reward-desc">Complete o desafio para desbloquear</p>
+                </div>
+            </div>
+            
+            <div class="daily-actions">
+                <button class="quiz-btn primary" onclick="startQuiz('daily')">
+                    Começar Desafio
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Tela de Resultado -->
     <div id="resultScreen" class="screen hidden">
         <div class="result-container">
