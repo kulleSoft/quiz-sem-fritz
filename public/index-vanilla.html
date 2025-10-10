@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Gênio das Curiosidades</title>
+    <meta name="description" content="Teste seus conhecimentos com o melhor quiz de curiosidades em português!" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-card">
+            <div class="quiz-icon">
+                <div class="icon-main">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16,17 21,12 16,7" />
+                        <line x1="21" x2="9" y1="12" y2="12" />
+                    </svg>
+                </div>
+                <div class="icon-badge">?</div>
+            </div>
+            
+            <div class="title-section">
+                <h1>QUIZ</h1>
+                <p class="subtitle-orange">GÊNIO DAS</p>
+                <p class="subtitle">CURIOSIDADES</p>
+            </div>
+            
+            <div class="buttons-section">
+                <button class="quiz-btn primary" onclick="startQuiz('general')">
+                    Jogar Agora
+                </button>
+                
+                <button class="quiz-btn primary" onclick="showCategories()">
+                    Categorias
+                </button>
+                
+                <button class="quiz-btn secondary" onclick="showDailyChallenge()">
+                    Desafio Diário
+                </button>
+            </div>
+            
+            <div class="footer-section">
+                <button class="terms-link" onclick="showTerms()">
+                    Termos de uso e privacidade
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Termos -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Termos de Uso e Privacidade</h2>
+            </div>
+            
+            <div class="modal-body">
+                <div class="terms-section">
+                    <h3>Termos de Uso</h3>
+                    <p>Ao usar este quiz, você concorda que o app é para entretenimento e educação. É proibido uso comercial sem autorização e cópia do conteúdo.</p>
+                </div>
+                
+                <div class="terms-section">
+                    <h3>Privacidade</h3>
+                    <p>Coletamos apenas dados necessários (pontuações, progresso). Não compartilhamos informações pessoais. Dados ficam no seu dispositivo.</p>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button class="quiz-btn primary" onclick="acceptTerms()">
+                        Aceito os Termos
+                    </button>
+                    <button class="terms-detail-link" onclick="showFullTerms()">
+                        Ler termos completos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Quiz -->
+    <div id="quizScreen" class="screen hidden">
+        <div class="quiz-header">
+            <button class="back-btn" onclick="goHome()">← Voltar</button>
+            <div class="score">Pontos: <span id="score">0</span></div>
+        </div>
+        
+        <div class="question-container">
+            <div class="question-number">
+                Pergunta <span id="questionNumber">1</span> de <span id="totalQuestions">10</span>
+            </div>
+            
+            <div class="question-text" id="questionText">
+                Carregando pergunta...
+            </div>
+            
+            <div class="answers-container" id="answersContainer">
+                <!-- Respostas serão inseridas aqui -->
+            </div>
+            
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Resultado -->
+    <div id="resultScreen" class="screen hidden">
+        <div class="result-container">
+            <div class="result-icon">🎉</div>
+            <h2>Quiz Finalizado!</h2>
+            <div class="final-score">
+                Sua pontuação: <span id="finalScore">0</span> pontos
+            </div>
+            <div class="result-message" id="resultMessage"></div>
+            
+            <div class="result-buttons">
+                <button class="quiz-btn primary" onclick="startQuiz('general')">
+                    Jogar Novamente
+                </button>
+                <button class="quiz-btn secondary" onclick="goHome()">
+                    Voltar ao Início
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
