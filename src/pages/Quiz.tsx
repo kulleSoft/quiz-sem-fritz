@@ -14,33 +14,197 @@ interface Question {
   explanation: string;
 }
 
-const sampleQuestions: Question[] = [
-  {
-    id: 1,
-    question: "Qual é a capital do Brasil?",
-    options: ["São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte"],
-    correct: 2,
-    explanation: "Brasília é a capital federal do Brasil desde 1960."
-  },
-  {
-    id: 2,
-    question: "Quantos planetas existem no sistema solar?",
-    options: ["7", "8", "9", "10"],
-    correct: 1,
-    explanation: "O sistema solar tem 8 planetas oficiais desde que Plutão foi reclassificado como planeta anão."
-  },
-  {
-    id: 3,
-    question: "Quem pintou a Mona Lisa?",
-    options: ["Van Gogh", "Picasso", "Leonardo da Vinci", "Michelangelo"],
-    correct: 2,
-    explanation: "Leonardo da Vinci pintou a Mona Lisa entre 1503 e 1519."
-  }
-];
+const questionsByCategory: Record<string, Question[]> = {
+  geografia: [
+    {
+      id: 1,
+      question: "Qual é a capital do Brasil?",
+      options: ["São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte"],
+      correct: 2,
+      explanation: "Brasília é a capital federal do Brasil desde 1960."
+    },
+    {
+      id: 2,
+      question: "Qual o maior país do mundo?",
+      options: ["China", "Rússia", "Canadá", "Estados Unidos"],
+      correct: 1,
+      explanation: "A Rússia é o maior país do mundo em área territorial."
+    },
+    {
+      id: 3,
+      question: "Qual é o rio mais longo do mundo?",
+      options: ["Nilo", "Amazonas", "Yangtzé", "Mississippi"],
+      correct: 1,
+      explanation: "O Rio Nilo é considerado o rio mais longo do mundo."
+    }
+  ],
+  historia: [
+    {
+      id: 1,
+      question: "Em que ano ocorreu a independência do Brasil?",
+      options: ["1822", "1889", "1500", "1808"],
+      correct: 0,
+      explanation: "A independência do Brasil foi proclamada em 7 de setembro de 1822."
+    },
+    {
+      id: 2,
+      question: "Quem foi o primeiro presidente do Brasil?",
+      options: ["Getúlio Vargas", "Deodoro da Fonseca", "Juscelino Kubitschek", "Dom Pedro II"],
+      correct: 1,
+      explanation: "Deodoro da Fonseca foi o primeiro presidente do Brasil."
+    },
+    {
+      id: 3,
+      question: "Quando acabou a Segunda Guerra Mundial?",
+      options: ["1943", "1944", "1945", "1946"],
+      correct: 2,
+      explanation: "A Segunda Guerra Mundial terminou em 1945."
+    }
+  ],
+  ciencias: [
+    {
+      id: 1,
+      question: "Quantos planetas existem no sistema solar?",
+      options: ["7", "8", "9", "10"],
+      correct: 1,
+      explanation: "O sistema solar tem 8 planetas oficiais desde que Plutão foi reclassificado como planeta anão."
+    },
+    {
+      id: 2,
+      question: "Qual é o gás mais abundante na atmosfera terrestre?",
+      options: ["Oxigênio", "Nitrogênio", "Gás Carbônico", "Hidrogênio"],
+      correct: 1,
+      explanation: "O nitrogênio representa cerca de 78% da atmosfera terrestre."
+    },
+    {
+      id: 3,
+      question: "Qual é a velocidade da luz?",
+      options: ["300.000 km/s", "150.000 km/s", "500.000 km/s", "200.000 km/s"],
+      correct: 0,
+      explanation: "A velocidade da luz no vácuo é aproximadamente 300.000 km/s."
+    }
+  ],
+  entretenimento: [
+    {
+      id: 1,
+      question: "Qual filme ganhou o Oscar de melhor filme em 2020?",
+      options: ["Parasita", "Coringa", "1917", "Era Uma Vez em Hollywood"],
+      correct: 0,
+      explanation: "Parasita foi o primeiro filme em língua não inglesa a ganhar o Oscar de melhor filme."
+    },
+    {
+      id: 2,
+      question: "Qual é a série mais assistida da Netflix?",
+      options: ["Stranger Things", "Round 6", "La Casa de Papel", "The Witcher"],
+      correct: 1,
+      explanation: "Round 6 se tornou a série mais assistida da Netflix."
+    },
+    {
+      id: 3,
+      question: "Quem interpretou o Homem de Ferro no MCU?",
+      options: ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"],
+      correct: 1,
+      explanation: "Robert Downey Jr. interpretou Tony Stark/Homem de Ferro no MCU."
+    }
+  ],
+  arte: [
+    {
+      id: 1,
+      question: "Quem pintou a Mona Lisa?",
+      options: ["Van Gogh", "Picasso", "Leonardo da Vinci", "Michelangelo"],
+      correct: 2,
+      explanation: "Leonardo da Vinci pintou a Mona Lisa entre 1503 e 1519."
+    },
+    {
+      id: 2,
+      question: "Qual movimento artístico Pablo Picasso fundou?",
+      options: ["Impressionismo", "Cubismo", "Surrealismo", "Expressionismo"],
+      correct: 1,
+      explanation: "Pablo Picasso foi um dos fundadores do Cubismo."
+    },
+    {
+      id: 3,
+      question: "Onde está localizado o Museu do Louvre?",
+      options: ["Londres", "Nova York", "Paris", "Roma"],
+      correct: 2,
+      explanation: "O Museu do Louvre está localizado em Paris, França."
+    }
+  ],
+  musica: [
+    {
+      id: 1,
+      question: "Qual banda britânica é conhecida como os 'Fab Four'?",
+      options: ["The Rolling Stones", "The Beatles", "Queen", "Led Zeppelin"],
+      correct: 1,
+      explanation: "The Beatles eram conhecidos como os 'Fab Four'."
+    },
+    {
+      id: 2,
+      question: "Quantas cordas tem um violão tradicional?",
+      options: ["4", "5", "6", "7"],
+      correct: 2,
+      explanation: "Um violão tradicional tem 6 cordas."
+    },
+    {
+      id: 3,
+      question: "Quem é conhecido como o 'Rei do Pop'?",
+      options: ["Elvis Presley", "Michael Jackson", "Prince", "Freddie Mercury"],
+      correct: 1,
+      explanation: "Michael Jackson é conhecido como o 'Rei do Pop'."
+    }
+  ],
+  general: [
+    {
+      id: 1,
+      question: "Qual é a capital do Brasil?",
+      options: ["São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte"],
+      correct: 2,
+      explanation: "Brasília é a capital federal do Brasil desde 1960."
+    },
+    {
+      id: 2,
+      question: "Quantos planetas existem no sistema solar?",
+      options: ["7", "8", "9", "10"],
+      correct: 1,
+      explanation: "O sistema solar tem 8 planetas oficiais desde que Plutão foi reclassificado como planeta anão."
+    },
+    {
+      id: 3,
+      question: "Quem pintou a Mona Lisa?",
+      options: ["Van Gogh", "Picasso", "Leonardo da Vinci", "Michelangelo"],
+      correct: 2,
+      explanation: "Leonardo da Vinci pintou a Mona Lisa entre 1503 e 1519."
+    }
+  ],
+  daily: [
+    {
+      id: 1,
+      question: "Qual é o maior oceano do mundo?",
+      options: ["Atlântico", "Índico", "Pacífico", "Ártico"],
+      correct: 2,
+      explanation: "O Oceano Pacífico é o maior oceano do mundo."
+    },
+    {
+      id: 2,
+      question: "Qual é a montanha mais alta do mundo?",
+      options: ["K2", "Monte Everest", "Kilimanjaro", "Aconcágua"],
+      correct: 1,
+      explanation: "O Monte Everest é a montanha mais alta do mundo com 8.848 metros."
+    },
+    {
+      id: 3,
+      question: "Quantos continentes existem?",
+      options: ["5", "6", "7", "8"],
+      correct: 2,
+      explanation: "Existem 7 continentes: África, América do Norte, América do Sul, Antártida, Ásia, Europa e Oceania."
+    }
+  ]
+};
 
 const Quiz = () => {
   const navigate = useNavigate();
   const { category } = useParams();
+  const questions = questionsByCategory[category || 'general'] || questionsByCategory.general;
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -85,13 +249,13 @@ const Quiz = () => {
     if (selectedAnswer === null) return;
     
     setShowResult(true);
-    if (selectedAnswer === sampleQuestions[currentQuestion].correct) {
+    if (selectedAnswer === questions[currentQuestion].correct) {
       setScore(score + 1);
     }
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestion < sampleQuestions.length - 1) {
+    if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
       setShowResult(false);
@@ -100,7 +264,7 @@ const Quiz = () => {
       setQuizCompleted(true);
       toast({
         title: "Quiz concluído!",
-        description: `Você acertou ${score}/${sampleQuestions.length} perguntas.`,
+        description: `Você acertou ${score}/${questions.length} perguntas.`,
       });
     }
   };
@@ -142,13 +306,13 @@ const Quiz = () => {
               <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
                 <span className="text-foreground">Pontuação:</span>
                 <span className="text-2xl font-bold text-quiz-orange">
-                  {score}/{sampleQuestions.length}
+                  {score}/{questions.length}
                 </span>
               </div>
               <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
                 <span className="text-foreground">Percentual:</span>
                 <span className="text-2xl font-bold text-quiz-blue">
-                  {Math.round((score / sampleQuestions.length) * 100)}%
+                  {Math.round((score / questions.length) * 100)}%
                 </span>
               </div>
             </div>
@@ -177,7 +341,7 @@ const Quiz = () => {
     );
   }
 
-  const currentQ = sampleQuestions[currentQuestion];
+  const currentQ = questions[currentQuestion];
 
   return (
     <div 
@@ -197,7 +361,7 @@ const Quiz = () => {
           <div className="text-center">
             <p className="text-sm text-muted-foreground">{getCategoryName()}</p>
             <p className="text-lg font-bold text-foreground">
-              {currentQuestion + 1}/{sampleQuestions.length}
+              {currentQuestion + 1}/{questions.length}
             </p>
           </div>
           
@@ -285,7 +449,7 @@ const Quiz = () => {
               className="w-full"
               onClick={handleNextQuestion}
             >
-              {currentQuestion < sampleQuestions.length - 1 ? "Próxima Pergunta" : "Ver Resultado"}
+              {currentQuestion < questions.length - 1 ? "Próxima Pergunta" : "Ver Resultado"}
             </QuizButton>
           )}
         </div>
