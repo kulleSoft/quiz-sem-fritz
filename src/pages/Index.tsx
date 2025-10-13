@@ -3,6 +3,7 @@ import { QuizButton } from "@/components/ui/quiz-button";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import backgroundImage from "@/assets/background.jpeg";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -21,7 +22,10 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div 
+      className="min-h-screen flex items-center justify-center p-6 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <div className="max-w-md w-full">
         <div className="text-center mb-12">
           <QuizIcon className="mx-auto mb-6" />
