@@ -56,6 +56,16 @@ const Quiz = () => {
     }
   }, [timeLeft, showResult, quizCompleted]);
 
+  // Auto-advance to next question after showing result
+  useEffect(() => {
+    if (showResult && timeLeft === 0) {
+      const timer = setTimeout(() => {
+        handleNextQuestion();
+      }, 3000); // Wait 3 seconds before moving to next question
+      return () => clearTimeout(timer);
+    }
+  }, [showResult, timeLeft]);
+
   const handleTimeUp = () => {
     setShowResult(true);
     toast({
