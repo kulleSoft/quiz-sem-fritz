@@ -44,7 +44,7 @@ const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeLeft, setTimeLeft] = useState(10);
   const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const Quiz = () => {
       setCurrentQuestion(currentQuestion + 1);
       setSelectedAnswer(null);
       setShowResult(false);
-      setTimeLeft(30);
+      setTimeLeft(10);
     } else {
       setQuizCompleted(true);
       toast({
