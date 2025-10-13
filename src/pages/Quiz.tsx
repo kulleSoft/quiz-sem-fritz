@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, Clock, CheckCircle, XCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import backgroundImage from "@/assets/background.jpeg";
 
 interface Question {
   id: number;
@@ -119,8 +120,11 @@ const Quiz = () => {
 
   if (quizCompleted) {
     return (
-      <div className="min-h-screen p-6">
-        <div className="max-w-md mx-auto">
+      <div 
+        className="min-h-screen p-6 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        <div className="max-w-md mx-auto relative z-10">
           <Card className="p-8 bg-quiz-card border-quiz-orange/20 text-center quiz-shadow-card">
             <div className="mb-6">
               <div className="w-24 h-24 mx-auto rounded-full quiz-gradient-orange flex items-center justify-center mb-4">
@@ -176,8 +180,11 @@ const Quiz = () => {
   const currentQ = sampleQuestions[currentQuestion];
 
   return (
-    <div className="min-h-screen p-6">
-      <div className="max-w-md mx-auto">
+    <div 
+      className="min-h-screen p-6 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="max-w-md mx-auto relative z-10">
         <div className="flex items-center justify-between mb-6">
           <QuizButton
             variant="outline"

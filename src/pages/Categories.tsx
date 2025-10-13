@@ -2,6 +2,7 @@ import { QuizButton } from "@/components/ui/quiz-button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Globe, Gamepad, History, Dna, Palette, Music } from "lucide-react";
+import backgroundImage from "@/assets/background.jpeg";
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -16,8 +17,11 @@ const Categories = () => {
   ];
 
   return (
-    <div className="min-h-screen p-6">
-      <div className="max-w-md mx-auto">
+    <div 
+      className="min-h-screen p-6 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="max-w-md mx-auto relative z-10">
         <div className="flex items-center gap-4 mb-8">
           <QuizButton
             variant="outline"
