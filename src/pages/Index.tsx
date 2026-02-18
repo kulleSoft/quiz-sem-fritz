@@ -45,7 +45,7 @@ const Index = () => {
             variant="primary"
             size="lg"
             className="w-full"
-            onClick={() => navigate("/quiz/general")}
+            onClick={() => { console.log("Navigating to /quiz/general"); navigate("/quiz/general"); }}
           >
             Jogar Agora
           </QuizButton>
@@ -54,7 +54,7 @@ const Index = () => {
             variant="primary"
             size="lg"
             className="w-full"
-            onClick={() => navigate("/categories")}
+            onClick={() => { console.log("Navigating to /categories"); navigate("/categories"); }}
           >
             Categorias
           </QuizButton>
@@ -63,7 +63,7 @@ const Index = () => {
             variant="secondary"
             size="lg"
             className="w-full"
-            onClick={() => navigate("/daily-challenge")}
+            onClick={() => { console.log("Navigating to /daily-challenge"); navigate("/daily-challenge"); }}
           >
             Desafio Diário
           </QuizButton>
