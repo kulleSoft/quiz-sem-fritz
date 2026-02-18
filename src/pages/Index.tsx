@@ -101,6 +101,7 @@ const Index = () => {
               <p className="text-white/90 text-xs leading-relaxed">
                 Coletamos apenas dados necessários (pontuações, progresso). 
                 Não compartilhamos informações pessoais. Dados ficam no seu dispositivo.
+                O app exibe anúncios para manter o serviço gratuito.
               </p>
             </div>
             

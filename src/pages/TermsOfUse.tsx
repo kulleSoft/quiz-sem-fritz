@@ -53,19 +53,33 @@ const TermsOfUse = () => {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-quiz-orange mb-3">3. Dados Coletados</h2>
+            <h2 className="text-xl font-bold text-quiz-orange mb-3">3. Publicidade</h2>
+            <div className="space-y-2 text-sm leading-relaxed">
+              <p>Este aplicativo exibe anúncios para manter o serviço gratuito:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Anúncios podem ser exibidos durante o uso do aplicativo</li>
+                <li>Utilizamos serviços de terceiros para exibição de anúncios</li>
+                <li>Os anúncios podem usar identificadores do dispositivo para personalização</li>
+                <li>Você pode desativar a personalização de anúncios nas configurações do seu dispositivo</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-quiz-orange mb-3">4. Dados Coletados</h2>
             <div className="space-y-2 text-sm leading-relaxed">
               <p>O aplicativo pode coletar:</p>
               <ul className="list-disc list-inside space-y-1 ml-4">
                 <li>Pontuações e progresso no quiz</li>
                 <li>Preferências de categoria</li>
                 <li>Dados de uso para melhorar a experiência</li>
+                <li>Identificadores de publicidade para exibição de anúncios</li>
               </ul>
             </div>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-quiz-orange mb-3">4. Contato</h2>
+            <h2 className="text-xl font-bold text-quiz-orange mb-3">5. Contato</h2>
             <p className="text-sm leading-relaxed">
               Para dúvidas sobre estes termos ou nossa política de privacidade, entre em contato através do aplicativo.
             </p>
