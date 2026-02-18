@@ -41,7 +41,10 @@ const Categories = () => {
               <Card
                 key={category.id}
                 className="p-6 bg-quiz-card border-quiz-orange/20 hover:border-quiz-orange/40 transition-all cursor-pointer hover:scale-105 quiz-shadow-card"
-                onClick={() => navigate(`/quiz/${category.id}`)}
+                onClick={() => {
+                  console.log("Navigating to category:", category.id, "URL:", `/quiz/${category.id}`);
+                  navigate(`/quiz/${category.id}`);
+                }}
               >
                 <div className="flex items-center gap-4">
                   <div className={`p-3 rounded-full ${category.color}`}>

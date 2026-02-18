@@ -204,7 +204,11 @@ const questionsByCategory: Record<string, Question[]> = {
 const Quiz = () => {
   const navigate = useNavigate();
   const { category } = useParams();
+  console.log("Quiz loaded - category param:", category);
+  console.log("Available categories:", Object.keys(questionsByCategory));
+  console.log("Category match:", category ? questionsByCategory[category] : "no category");
   const questions = questionsByCategory[category || 'general'] || questionsByCategory.general;
+  console.log("Selected questions count:", questions.length, "First question:", questions[0]?.question);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
